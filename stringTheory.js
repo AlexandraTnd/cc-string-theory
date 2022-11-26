@@ -55,5 +55,17 @@ console.log("Is Anagram: " + isAnagram('Justin Timberlake', "I'm a jerk but list
  *  ```
  */
 function isBlanagram(text1, text2) {
-
+    let lettersFromText1 = text1.replace(/[\W ]/g, "").toLowerCase().split("").sort();
+    let lettersFromText2 = text2.replace(/[\W ]/g, "").toLowerCase().split("").sort();
+    if (lettersFromText1.length !== lettersFromText2.length) {
+        return false;
+    }
+    for (let i = lettersFromText1.length - 1; i >= 0; i--) {
+        if (lettersFromText2.indexOf(lettersFromText1[i]) > -1) {
+            lettersFromText2.splice(lettersFromText2.indexOf(lettersFromText1[i]), 1);
+            lettersFromText1.splice(i, 1);
+        }
+    }
+    return lettersFromText1.length === 1 && lettersFromText2.length === 1 ? true : false;
 }
+console.log("Is Blanagram: " + isBlanagram('Justin Timberlake', "I'm a berk but listen"))
