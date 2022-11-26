@@ -7,8 +7,10 @@
  *  ```
  */
 function isPalindrome(text) {
-
+    let lettersFromText = text.replace(/[\W ]/g, "").toLowerCase();
+    return lettersFromText === lettersFromText.split("").reverse().join("") ? true : false;
 }
+console.log(isPalindrome('Eva, can I see bees in a cave?'));
 
 /**
  *  ```javascript
