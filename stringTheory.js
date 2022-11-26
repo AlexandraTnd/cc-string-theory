@@ -35,7 +35,7 @@ function isPangram(text) {
     let lettersFromText = text.replace(/[\W ]/g, "").toLowerCase().split("");
     return alphabet.split("").every(x => lettersFromText.indexOf(x) > -1)
 }
-console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+console.log("Is Pangram: " + isPangram('The quick brown fox jumps over the lazy dog'));
 
 /**
  *  ```javascript
@@ -44,8 +44,9 @@ console.log(isPangram('The quick brown fox jumps over the lazy dog'));
  *  ```
  */
 function isAnagram(text1, text2) {
-
+    return text1.replace(/[\W ]/g, "").toLowerCase().split("").sort().join("") === text2.replace(/[\W ]/g, "").toLowerCase().split("").sort().join("");
 }
+console.log("Is Anagram: " + isAnagram('Justin Timberlake', "I'm a jerk but listen"))
 
 /**
  *  ```javascript
