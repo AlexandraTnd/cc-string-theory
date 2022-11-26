@@ -31,8 +31,11 @@ console.log("Is Isogram: " + isIsogram("uncopyrightables"))
  *  ```
  */
 function isPangram(text) {
-
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let lettersFromText = text.replace(/[\W ]/g, "").toLowerCase().split("");
+    return alphabet.split("").every(x => lettersFromText.indexOf(x) > -1)
 }
+console.log(isPangram('The quick brown fox jumps over the lazy dog'));
 
 /**
  *  ```javascript
