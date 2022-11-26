@@ -10,7 +10,7 @@ function isPalindrome(text) {
     let lettersFromText = text.replace(/[\W ]/g, "").toLowerCase();
     return lettersFromText === lettersFromText.split("").reverse().join("") ? true : false;
 }
-console.log(isPalindrome('Eva, can I see bees in a cave?'));
+console.log("Is Palindrome: " + isPalindrome('Eva, can I see bees in a cave?'));
 
 /**
  *  ```javascript
@@ -19,8 +19,10 @@ console.log(isPalindrome('Eva, can I see bees in a cave?'));
  *  ```
  */
 function isIsogram(text) {
-
+    let lettersFromText = text.replace(/[\W ]/g, "").toLowerCase().split("");
+    return lettersFromText.length === lettersFromText.filter((x, index) => lettersFromText.indexOf(x) === lettersFromText.lastIndexOf(x)).length ? true : false;
 }
+console.log("Is Isogram: " + isIsogram("uncopyrightables"))
 
 /**
  *  ```javascript
